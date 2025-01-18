@@ -1,0 +1,47 @@
+# Register 
+POST https://hire-game.pertimm.dev/api/v1.1/auth/register/ HTTP/1.1
+content-type: application/json
+
+{
+    "email": "example@example.com",
+    "password1": "SecurePassword123!",
+    "password2": "SecurePassword123!"
+}
+
+
+###
+# Login
+POST https://hire-game.pertimm.dev/api/v1.1/auth/login/ HTTP/1.1
+content-type: application/json
+
+{
+    "email": "example@example.com",
+    "password": "SecurePassword123!"
+}
+
+
+###
+# Create application
+POST https://hire-game.pertimm.dev/api/v1.1/job-application-request/ HTTP/1.1
+content-type: application/json
+Authorization: Token 82a41c12602d43c03af0f96260fc7023e55c24cb
+
+{
+    "email": "example2@example.com",
+    "first_name": "Rakotomanga",
+    "last_name": "Hery"
+}
+
+###
+# create application step 2 (long pooling sur l'url de retour)
+GET https://hire-game.pertimm.dev/api/v1.1/job-application-request/ce895add-0ae5-474b-a8a2-c70733611622/ HTTP/1.1
+Authorization: Token 82a41c12602d43c03af0f96260fc7023e55c24cb
+
+### 
+# Confirmation (non-testable, url changeant)
+PATCH https://hire-game.pertimm.dev/api/v1.1/job-application-request/d561a0aa-5f74-4996-ac43-e9f2ec4bb4cc/ HTTP/1.1
+Authorization: Token 82a41c12602d43c03af0f96260fc7023e55c24cb
+
+{
+    "confirmed": true
+}
