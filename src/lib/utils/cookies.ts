@@ -10,7 +10,7 @@ export function setAuthCookie(cookies: Cookies, token: string) {
 		httpOnly: true,
 		secure: !dev,
 		sameSite: 'strict',
-		maxAge: 60 * 60 * 24 * 7 // 7 days
+		maxAge: 60 * 60 * 24 * 7
 	});
 }
 
@@ -28,7 +28,7 @@ export function setUserDataCookie(cookies: Cookies, userData: Record<string, any
 		httpOnly: true,
 		secure: !dev,
 		sameSite: 'strict',
-		maxAge: 60 * 60 * 24 * 7 // 7 days
+		maxAge: 60 * 60 * 24 * 7 
 	});
 }
 

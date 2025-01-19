@@ -1,38 +1,23 @@
-# sv
+## Prérequis
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+L'application nécessite que Bun soit installé sur votre machine.
 
-## Creating a project
+### Installation de Bun
 
-If you're seeing this, you've probably already done this step. Congrats!
+Pour installer Bun, suivez les instructions sur le site officiel : [Installation de Bun](https://bun.sh/docs/installation). Vous pouvez également utiliser la commande suivante dans votre terminal :
 
-```bash
-# create a new project in the current directory
-npx sv create
+## Comment Utiliser l'Application
 
-# create a new project in my-app
-npx sv create my-app
-```
+1. **Installation des dépendances** :
+   - Assurez-vous que Bun est installé.
+   - Exécutez `bun install` pour installer toutes les dépendances nécessaires.
 
-## Developing
+2. **Démarrage du serveur** :
+   - Utilisez `bun --bun run dev` pour démarrer le serveur de développement.
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+3. **Accéder à l'application** :
+   - Ouvrez votre navigateur et accédez à `http://localhost:5173/` pour voir l'application en action.
 
-```bash
-npm run dev
+## Création d'un projet
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+Si vous voyez ceci, vous avez probablement déjà effectué cette étape. Félicitations !

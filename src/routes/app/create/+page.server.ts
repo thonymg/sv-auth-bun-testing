@@ -73,7 +73,7 @@ export const actions = {
 					return r_;
 				});
 
-			return { success: true };
+			return { success: true , data: response.json()};
 		} catch (error) {
 			return fail(500, { error: 'Server error' });
 		}
