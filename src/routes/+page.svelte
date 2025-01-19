@@ -12,13 +12,13 @@
 		{#if token}
 			<p>Your are logged in, you can create an application</p>
 			<Button variant="default" size="lg" onclick={() => goto('/app/create')}>
-				Créer une application
+				Create Application
 			</Button>
 		{:else}
 			<p>You are not logged in, you can login or register</p>
-			<Button variant="default" size="lg" onclick={() => goto('/auth/login')}>Se connecter</Button>
+			<Button variant="default" size="lg" onclick={() => goto('/auth/login')}>Login</Button>
 
-			<Button variant="outline" size="lg" onclick={() => goto('/auth/register')}>S'inscrire</Button>
+			<Button variant="outline" size="lg" onclick={() => goto('/auth/register')}>Register</Button>
 		{/if}
 	</div>
 </div>

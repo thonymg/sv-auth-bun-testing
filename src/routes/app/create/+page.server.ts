@@ -8,7 +8,7 @@ export const actions = {
 		try {
 			const token = getAuthCookie(cookies);
 			if (!token) {
-				return fail(401, { error: 'Non authentifié' });
+				return fail(401, { error: 'Not logged in' });
 			}
 
 			const formData = await request.formData();
@@ -17,7 +17,7 @@ export const actions = {
 			const lastName = formData.get('lastName')?.toString();
 
 			if (!email || !firstName || !lastName) {
-				return fail(400, { error: 'Tous les champs sont requis' });
+				return fail(400, { error: 'All fields are required' });
 			}
 			const response = await fetch(
 				'https://hire-game.pertimm.dev/api/v1.1/job-application-request/',
@@ -35,7 +35,7 @@ export const actions = {
 				}
 			)
 				.then(async (response) => {
-					if (!response.ok) return fail(400, { error: 'Erreur' });
+					if (!response.ok) return fail(400, { error: 'Error' });
 					let result: any;
 					do {
 						const response = await fetch(
@@ -55,7 +55,7 @@ export const actions = {
 					return result;
 				})
 				.then(async (result) => {
-					if (!result) return fail(400, { error: 'Erreur' });
+					if (!result) return fail(400, { error: 'Error' });
 
 					const _response = await fetch(result.confirmation_url, {
 						method: 'PATCH',
@@ -67,16 +67,15 @@ export const actions = {
 							confirmed: true
 						})
 					});
-					if (!_response.ok) return fail(400, { error: 'Erreur' });
+					if (!_response.ok) return fail(400, { error: 'Error' });
 					const r_ = await _response.json();
 					setUserDataCookie(cookies, result);
 					return r_;
 				});
 
-			console.log('response ---> ', response);
-			return { success: true , data : response};
+			return { success: true };
 		} catch (error) {
-			return fail(500, { error: 'Erreur serveur' });
+			return fail(500, { error: 'Server error' });
 		}
 	}
 } satisfies Actions;

@@ -29,9 +29,7 @@ export const actions = {
 
 			const result = await response.json();
 
-			console.log('result', result);
 			locals.user = result;
-			console.log('locals.user', locals.user);
 
 			setAuthCookie(cookies, result.token);
 			return result;

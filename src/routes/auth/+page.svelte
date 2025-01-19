@@ -34,7 +34,7 @@
 		></div>
 		<div class="relative z-20 flex items-center text-lg font-medium">
 			<!-- <Command class="mr-2 size-6" /> -->
-			Acme Inc
+			Koto Inc
 		</div>
 		<div class="relative z-20 mt-auto"></div>
 	</div>
