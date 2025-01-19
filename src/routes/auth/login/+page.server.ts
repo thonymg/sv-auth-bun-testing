@@ -1,4 +1,3 @@
-import { getUserDataCookie, setUserDataCookie } from './../../../../$lib/utils/cookies';
 import { fail, redirect } from '@sveltejs/kit';
 import type { Actions, PageServerLoad } from './$types';
 import { getAuthCookie, setAuthCookie } from '$lib/utils/cookies';

@@ -1,6 +1,5 @@
-import { setUserDataCookie } from './../../../../$lib/utils/cookies';
 import { fail, redirect } from '@sveltejs/kit';
-import { getAuthCookie } from '$lib/utils/cookies';
+import { getAuthCookie, setUserDataCookie } from '$lib/utils/cookies';
 import type { Actions } from './$types';
 
 export const actions = {
@@ -73,7 +72,7 @@ export const actions = {
 					return r_;
 				});
 
-			return { success: true , data: response.json()};
+			return { success: true };
 		} catch (error) {
 			return fail(500, { error: 'Server error' });
 		}

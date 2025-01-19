@@ -8,7 +8,7 @@
 	let { form }: { form: ActionData } = $props();
 
 	$effect(() => {
-		if (form.success) {
+		if (form?.success) {
 			goto('/app/success');
 		}
 		return () => {
