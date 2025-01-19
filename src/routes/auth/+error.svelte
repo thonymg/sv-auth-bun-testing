@@ -11,6 +11,5 @@
 			{$page.error?.message || 'An error occurred during authentication'}
 		</p>
 		<AuthNav />
-		<Button variant="outline" on:click={() => history.back()}>Go Back</Button>
 	</div>
 </div>

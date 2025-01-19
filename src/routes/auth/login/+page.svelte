@@ -15,7 +15,6 @@
 			<h1 class="text-2xl font-semibold tracking-tight">Login</h1>
 			<p class="text-sm text-muted-foreground">Enter your credentials to login</p>
 		</div>
-
 		<div class="grid gap-6">
 			<form method="POST" use:enhance class="grid gap-4">
 				<div class="grid gap-2">

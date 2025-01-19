@@ -18,7 +18,6 @@
 			{/if}
 		</p>
 		<div class="flex justify-center gap-2">
-			<Button variant="outline" on:click={() => history.back()}>Go Back</Button>
 			<a href="/" use:Button>Home</a>
 		</div>
 	</div>

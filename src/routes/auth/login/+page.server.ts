@@ -5,17 +5,17 @@ import { getAuthCookie, setAuthCookie } from '$lib/utils/cookies';
 import { loginSchema } from '$lib/schemas/auth';
 import { ZodError } from 'zod';
 
-export const load: PageServerLoad = async ({ cookies }) => {
+export const load: PageServerLoad = async ({ cookies, locals }) => {
 	const token = getAuthCookie(cookies);
-	const userData = getUserDataCookie(cookies);
+
 	return {
 		token,
-		userData
+		user: locals.user
 	};
 };
 
 export const actions = {
-	default: async ({ request, cookies }) => {
+	default: async ({ request, cookies, locals }) => {
 		const formData = Object.fromEntries(await request.formData());
 
 		try {
@@ -29,8 +29,11 @@ export const actions = {
 
 			const result = await response.json();
 
+			console.log('result', result);
+			locals.user = result;
+			console.log('locals.user', locals.user);
+
 			setAuthCookie(cookies, result.token);
-			setUserDataCookie(cookies, result);
 			return result;
 		} catch (error) {
 			if (error instanceof ZodError) {
