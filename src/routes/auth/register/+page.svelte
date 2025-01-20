@@ -81,7 +81,7 @@
 		</div>
 
 
-		<p>After register you need to to on login page</p>
+		<p>After register you need to go on login page to continue your application</p>
 		<AuthNav />
 	</div>
 </div>

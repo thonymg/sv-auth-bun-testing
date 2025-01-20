@@ -2,7 +2,7 @@ import type { Cookies } from '@sveltejs/kit';
 import { dev } from '$app/environment';
 
 export const AUTH_COOKIE_NAME = 'test_auth_token';
-export const USER_DATA_COOKIE_NAME = 'user_data';
+export const USER_DATA_COOKIE_NAME = 'test_user_data';
 
 export function setAuthCookie(cookies: Cookies, token: string) {
 	cookies.set(AUTH_COOKIE_NAME, token, {
