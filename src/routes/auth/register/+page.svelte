@@ -5,8 +5,18 @@
 	import { enhance } from '$app/forms';
 	import AuthNav from '../(components)/auth-nav.svelte';
 	import type { ActionData } from './$types';
+	import { goto } from '$app/navigation';
 
-	export let form: ActionData;
+	let { form }: { form: ActionData } = $props();
+
+	$effect(() => {
+		if (form?.success) {
+			goto('/auth/login');
+		}
+		return () => {
+			console.log('unmount');
+		};
+	});
 </script>
 
 <div class="container flex h-screen w-screen flex-col items-center justify-center">
@@ -70,6 +80,8 @@
 			</form>
 		</div>
 
+
+		<p>After register you need to to on login page</p>
 		<AuthNav />
 	</div>
 </div>

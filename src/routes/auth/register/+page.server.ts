@@ -15,7 +15,7 @@ export const actions = {
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify(validatedData)
 			});
-			return await response.json();
+			return { success: true };
 		} catch (error) {
 			if (error instanceof ZodError) {
 				const errors = error.errors.reduce(

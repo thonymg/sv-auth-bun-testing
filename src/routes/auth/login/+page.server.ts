@@ -31,7 +31,7 @@ export const actions = {
 			locals.user = result;
 
 			setAuthCookie(cookies, result.token);
-			return result;
+			return { success: true };
 		} catch (error) {
 			if (error instanceof ZodError) {
 				const errors = error.errors.reduce(
