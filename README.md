@@ -18,6 +18,3 @@ Pour installer Bun, suivez les instructions sur le site officiel : [Installation
 3. **Accéder à l'application** :
    - Ouvrez votre navigateur et accédez à `http://localhost:5173/` pour voir l'application en action.
 
-## Création d'un projet
-
-Si vous voyez ceci, vous avez probablement déjà effectué cette étape. Félicitations !
